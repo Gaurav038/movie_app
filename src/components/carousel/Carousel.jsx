@@ -61,6 +61,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 {!loading ? (
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
+                            console.log(item, "---------------")
                             const posterUrl = item.poster_path
                                 ? url.poster + item.poster_path
                                 : PosterFallback;
@@ -92,7 +93,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                             {item.title || item.name}
                                         </span>
                                         <span className="date">
-                                            {dayjs(item.release_Date).format(
+                                            {dayjs(item.release_date).format(
                                                 "MMM D, YYYY"
                                             )}
                                         </span>
