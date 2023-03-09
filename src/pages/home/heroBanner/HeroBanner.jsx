@@ -28,6 +28,10 @@ const HeroBanner = () => {
         }
     };
 
+    const searchQueryHandler2 = (event) => {
+        navigate(`/search/${query}`);
+    };
+
     return (
         <div className="heroBanner">
             {!loading && (
@@ -39,7 +43,7 @@ const HeroBanner = () => {
             <div className="opacity-layer"></div>
             <ContentWrapper>
                 <div className="heroBannerContent">
-                    <span className="title">Welcome.</span>
+                    <span className="title">Enjoy.</span>
                     <span className="subTitle">
                         Millions of movies, TV shows and people to discover.
                         Explore now.
@@ -51,7 +55,7 @@ const HeroBanner = () => {
                             onChange={(e) => setQuery(e.target.value)}
                             onKeyUp={searchQueryHandler}
                         />
-                        <button>Search</button>
+                        <button onClick={searchQueryHandler2} >Search</button>
                     </div>
                 </div>
             </ContentWrapper>

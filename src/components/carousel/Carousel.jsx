@@ -22,7 +22,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
 
     const navigation = (dir) => {
         const container = carouselContainer.current;
-
         const scrollAmount =
             dir === "left"
                 ? container.scrollLeft - (container.offsetWidth + 20)
@@ -61,7 +60,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                 {!loading ? (
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
-                            console.log(item, "---------------")
                             const posterUrl = item.poster_path
                                 ? url.poster + item.poster_path
                                 : PosterFallback;
